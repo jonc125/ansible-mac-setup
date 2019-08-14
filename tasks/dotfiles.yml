@@ -108,3 +108,8 @@
   copy:
     src: iterm/profiles.json
     dest: "~/Library/Application Support/iTerm2/DynamicProfiles"
+
+- name: Copy iTerm2 settings
+  copy:
+    src: iterm/com.googlecode.iterm2.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
