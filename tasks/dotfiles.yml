@@ -103,3 +103,8 @@
 - name: Set shell
   command: chsh -s {{ shell }}
   when: current_shell.rc == 1
+
+- name: Copy iTerm2 profiles
+  copy:
+    src: iterm/profiles.json
+    dest: "~/Library/Application Support/iTerm2/DynamicProfiles"
