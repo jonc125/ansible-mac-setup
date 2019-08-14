@@ -1,0 +1,16 @@
+---
+# Where to store extra dotfiles
+settings_dir: ~/.settings
+zsh_settings_dir: "{{ settings_dir }}/zsh"
+
+# Where to store files downloaded by the playbook
+downloads: ~/.ansible-downloads/
+
+# Antigen configuration file
+antigenrc: ~/.antigenrc
+
+# Where anaconda was installed
+anaconda_path: /anaconda
+
+# Preferred shell
+shell: /usr/local/bin/zsh

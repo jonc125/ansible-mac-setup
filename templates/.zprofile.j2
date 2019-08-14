@@ -1,0 +1,11 @@
+# Run for login shells
+
+source {{ settings_dir }}/envvar.zsh
+
+[[ -e {{ settings_dir }}/zprofile ]] && source {{ settings_dir }}/zprofile
+
+export fpath=($fpath {{ settings_dir }}/completions)
+
+export HOMEBREW_ROOT=$(brew --prefix)
+# export LUA_PATH="$HOMEBREW_ROOT\/share/lua/5.2/?.lua;$HOMEBREW_ROOT\/share/lua/5.2/?/init.lua;;"
+# export LUA_CPATH="$HOMEBREW_ROOT\/lib/lua/5.2/?.so;;"

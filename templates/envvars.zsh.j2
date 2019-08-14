@@ -1,0 +1,33 @@
+# zsh environment variable settings, used for login shells only
+
+export HOMEBREW_GITHUB_API_TOKEN={{ brew_github_api_token }}
+
+export DEFAULT_USER=$(whoami)
+
+export CFLAGS=-Wall
+
+export CXXFLAGS=$CFLAGS
+
+export EDITOR=nano
+
+export VISUAL=nano
+
+export CLICOLOR=1
+
+export HISTFILE=~/.zhistory
+
+export HISTSIZE=100000
+
+export SAVEHIST=100000
+
+export TERM=screen-256color
+
+export EVENT_NOKQUEUE=1
+
+export ZSH_CACHE_DIR=~/.cache/zsh
+
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+
+export ORACLE_HOME=/opt/oracle/instantclient_12_1
+
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:${ORACLE_HOME}:${PATH}

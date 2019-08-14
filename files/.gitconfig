@@ -1,0 +1,25 @@
+[user]
+	name = Jonathan Cooper
+	email = j.p.cooper@ucl.ac.uk
+[credential]
+	helper = osxkeychain
+[apply]
+	whitespace = fix
+[branch]
+	autosetupmerge = True
+[color]
+	ui = auto
+[core]
+	editor = nano
+	autoclrf = input
+	safeclrf = warn
+	commentchar = ";"
+[credential "https://chaste.cs.ox.ac.uk"]
+	username = jonc@comlab.ox.ac.uk
+[diff]
+	mnemonicprefix = True
+	renames = copies
+[pull]
+	ff = only
+[push]
+	default = simple

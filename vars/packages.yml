@@ -1,0 +1,56 @@
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - coreutils
+  - git
+  - node
+  - nvm
+  - readline
+  - openssl
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chromedriver
+  - docker
+  - dropbox
+  # - firefox  # installed manually
+  - google-chrome
+  # - handbrake
+  # - slack  # installed via app store
+  - sublime-text
+  - virtualbox
+  - vagrant
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+  # - name: drush
+  #   state: present # present/absent, default: present
+  #   version: "^8.1" # default: N/A
+gem_packages: []
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+pip_packages: []
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
+conda_packages: []
+  # - name: hdf5
+  #   state: present # present/absent/latest, default: present
+  #   version: "1.10.5" # default: N/A
