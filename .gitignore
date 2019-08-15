@@ -1,4 +1,5 @@
 *.vagrant
 .DS_Store
 *.retry
+roles/
 vars/secrets.yml

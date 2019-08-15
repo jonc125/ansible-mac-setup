@@ -7,5 +7,9 @@ More automation may come later!
 
 Run with
 ```sh
+# Install role dependencies
+ansible-galaxy install -r requirements.yml
+
+# Configure machine
 ansible-playbook main.yml -i inventory -K
 ```

@@ -28,7 +28,7 @@ homebrew_cask_apps:
   - vagrant
   # Extras
   - cleanmymac
-  - lastpass
+  # - lastpass
   - microsoft-teams
   - oxygen-xml-editor
   - skype
