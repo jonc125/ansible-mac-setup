@@ -50,8 +50,8 @@
 
 - name: Copy templated zsh settings
   template:
-    src: {{ item }}.j2
-    dest: "{{ zsh_settings_dir }}"/{{ item }}
+    src: "{{ item }}.j2"
+    dest: "{{ zsh_settings_dir }}/{{ item }}"
     mode: 0640
   with_items:
     - conda.zsh
@@ -93,7 +93,7 @@
 - name: Add shell to acceptable shells
   shell: echo "{{ shell }}" >> /etc/shells
   become: yes
-  when: "{{ shell }}" not in shells
+  when: shell not in shells
 
 - name: Check current shell
   shell: test $SHELL -ef {{ shell }} && test -e {{ shell }}
