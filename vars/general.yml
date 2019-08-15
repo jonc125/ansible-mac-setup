@@ -10,7 +10,7 @@ downloads: ~/.ansible-downloads/
 antigenrc: ~/.antigenrc
 
 # Where anaconda was installed
-anaconda_path: /anaconda
+anaconda_path: /anaconda3
 
 # Preferred shell
 shell: /usr/local/bin/zsh

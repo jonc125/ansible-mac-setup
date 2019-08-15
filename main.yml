@@ -11,6 +11,7 @@
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml
+      tags: ['always']
 
     - include_tasks: tasks/dotfiles.yml
-      tags: ['dotfiles']
+      tags: ['always']

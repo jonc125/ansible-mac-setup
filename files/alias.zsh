@@ -1,6 +1,6 @@
 # aliases for interactive shells
 
-# alias ls="ls --color=auto"
+alias ls="ls --color=auto"
 alias la="ls -A"
 alias ll="ls -l"
 

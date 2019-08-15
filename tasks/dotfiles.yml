@@ -9,6 +9,11 @@
     path: "{{ zsh_settings_dir }}"
     state: directory
 
+- name: Ensure zsh cache folder exists
+  file:
+    path: ~/.cache/zsh
+    state: directory
+
 - name: Ensure .config folder exists
   file:
     path: ~/.config
@@ -22,6 +27,7 @@
     mode: 0640
   with_items:
     - .gitconfig
+  tags: ['dotfiles']
 
 - name: Copy templated dotfiles
   template:
@@ -31,12 +37,21 @@
   with_items:
     - .zshrc
     - .zprofile
+  tags: ['dotfiles']
+
+- name: Copy antigenrc
+  copy:
+    src: antigenrc
+    dest: "{{ antigenrc }}"
+    mode: 0640
+  tags: ['dotfiles']
 
 - name: Copy zsh env vars
   template:
     src: envvars.zsh.j2
     dest: "{{ settings_dir }}/envvars.zsh"
     mode: 0640
+  tags: ['dotfiles']
 
 - name: Copy zsh settings
   copy:
@@ -47,6 +62,7 @@
     - alias.zsh
     - et.zsh
     - options.zsh
+  tags: ['dotfiles']
 
 - name: Copy templated zsh settings
   template:
@@ -55,61 +71,73 @@
     mode: 0640
   with_items:
     - conda.zsh
+  tags: ['dotfiles']
 
 - name: Ensure ssh config dir exists
   file:
     path: ~/.ssh
     state: directory
     mode: 0700
+  tags: ['dotfiles']
 
 - name: Copy ssh config
   copy:
     src: sshconfig
     dest: ~/.ssh/config
     mode: 0600
+  tags: ['dotfiles']
 
 - name: Ensure git config dir exists
   file:
     path: ~/.config/git
     state: directory
     mode: 0700
+  tags: ['dotfiles']
 
 - name: Copy git global ignores
   copy:
     src: gitignore
     dest: ~/.config/git/ignores
     mode: 0640
+  tags: ['dotfiles']
 
 - name: Copy liquidpromptrc
   copy:
     src: liquidpromptrc
     dest: ~/.config/liquidpromptrc
     mode: 0640
+  tags: ['dotfiles']
 
 - name: Find acceptable shells
   command: cat /etc/shells
   register: shells
+  tags: ['shell']
 
 - name: Add shell to acceptable shells
   shell: echo "{{ shell }}" >> /etc/shells
   become: yes
-  when: shell not in shells
+  when: shell not in shells.stdout
+  tags: ['shell']
 
 - name: Check current shell
   shell: test $SHELL -ef {{ shell }} && test -e {{ shell }}
   register: current_shell
   ignore_errors: True
+  tags: ['shell']
 
 - name: Set shell
   command: chsh -s {{ shell }}
   when: current_shell.rc == 1
+  tags: ['shell']
 
 - name: Copy iTerm2 profiles
   copy:
     src: iterm/profiles.json
     dest: "~/Library/Application Support/iTerm2/DynamicProfiles"
+  tags: ['iterm']
 
 - name: Copy iTerm2 settings
   copy:
     src: iterm/com.googlecode.iterm2.plist
     dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+  tags: ['iterm']
