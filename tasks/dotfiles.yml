@@ -97,7 +97,7 @@
 - name: Copy git global ignores
   copy:
     src: gitignore
-    dest: ~/.config/git/ignores
+    dest: ~/.config/git/ignore
     mode: 0640
   tags: ['dotfiles']
 
