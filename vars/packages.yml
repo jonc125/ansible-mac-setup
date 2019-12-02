@@ -1,14 +1,21 @@
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
+  - antigen
   - coreutils
+  - gcc
   - git
+  - liquidprompt
   - node
+  - ntfs-3g
   - nvm
+  - pandoc
   - readline
   - openssl
   - postgresql
+  - tmux
   - wget
+  - zsh
 
 homebrew_taps:
   - homebrew/core
@@ -31,11 +38,14 @@ homebrew_cask_apps:
   - adobe-acrobat-reader
   - cleanmymac
   - dash
+  - google-backup-and-sync
   # - lastpass
+  - mactex
   - microsoft-teams
+  - osxfuse
   - oxygen-xml-editor
   - skype
-  - skype-for-business
+  - vlc
   - zotero
 
 # See `geerlingguy.mas` role documentation for usage instructions.

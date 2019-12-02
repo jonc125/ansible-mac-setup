@@ -2,8 +2,10 @@
 
 This is based on https://github.com/geerlingguy/mac-dev-playbook but with my own settings, particularly for dotfiles.
 
-Initially I've installed Anaconda, brew (with packages + casks) and App store apps manually.
+Initially I've installed Anaconda, brew and App store apps manually.
 More automation may come later!
+
+You need at least to install Python and `pip install ansible` in order to run.
 
 Run with
 ```sh
